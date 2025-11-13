@@ -1,2 +1,3 @@
 # bookbot
-wordcount/character of favorite titles
+
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
