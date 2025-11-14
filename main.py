@@ -1,13 +1,14 @@
-from stats import count_words
-from stats import count_characters
+from stats import (count_words, count_characters, sort_dict_list)
 
 def main():
+    
     path = "books/frankenstein.txt"
     book_text = get_book_text(path)
-    count_words(book_text)
+    count = count_words(book_text)
     count_characters(book_text)
     chars = count_characters(book_text)
-    print(chars)
+    da_list = sort_dict_list(chars)
+    print_func(path, count, da_list)
 
 
 def get_book_text(path):
@@ -15,5 +16,11 @@ def get_book_text(path):
         book_text = f.read()
         return book_text
 
+def print_func(path, count, da_list):
+    print(f"Found {count} total words")
+    for item in da_list:
+        if not item["char"].isalpha():
+            continue
+        print(f"{item['char']}: {item['num']}")
 
 main()
